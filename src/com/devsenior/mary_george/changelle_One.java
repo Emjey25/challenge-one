@@ -24,7 +24,7 @@ public class changelle_One {
 
         }
 
-        // Creación de metodo para el menú de las acciones del programa
+        // Elecciones Menu
         public static void ShowMenu() {
 
                 System.out.println("\n--Menu Principal---");
