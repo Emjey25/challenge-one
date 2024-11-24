@@ -22,10 +22,14 @@ public class changelle_One {
         static ArrayList<Double> Distance = new ArrayList<>(
                         Arrays.asList(91691000.0, 41400000.0, 78340000.0, 628730000.0, 1429000000.0,
                                         2723950000.0, 4347000000.0));
-
-        static ArrayList<String> naves = new ArrayList<>(
-                        Arrays.asList("Galileo", "Mariner 9", "New Horizons,", "AresOne"));
         static String selectedNave;
+
+        static ArrayList<Double> MasaNave = new ArrayList<>(Arrays.asList(2.040,26.5,5.7,6.2,0.722,0.899,420.0));
+
+        static ArrayList<String> Naves = new ArrayList<>(
+                        Arrays.asList("Transbordador espacial", "Nave espacial Orion", "Sonda espacial Cassini-Huygens",
+                                        "Telescopio espacial James Webb", "Sonda espacial Voyager 1", "Rover Curiosity",
+                                        "Estación Espacial Internacional"));
 
         public static void RetoOne() {
 
@@ -35,7 +39,7 @@ public class changelle_One {
                                         [[[ BIENVENIDO AL SIMULADOR DE VIAJES INTERPLANETARIOS ]]]
                                 ===========================================================================
                                 ===========================================================================
-                                        """ + RESET);
+                                        """ + RESET); 
 
                 int option;
                 do {
@@ -47,7 +51,6 @@ public class changelle_One {
                                         break;
 
                                 case 2:
-                                        selectNave();
                                         selectPlanet();
                                         break;
 
@@ -81,36 +84,33 @@ public class changelle_One {
                 }
         }
 
+        
         public static void ShowNaves() {
-                System.out.println(BLUE + "---------- NAVES DISPONIBLES -------: \n" + RESET);
-                for (int i = 0; i < naves.size(); i++) {
-                        System.out.println(naves.size());
-                }
-
+                System.out.println(CYAN + "\n------<NAVES DISPONIBLES>-------" + RESET);
+                System.out.println("1. Transbordador espacial");
+                System.out.println("2. Nave espacial Orion");
+                System.out.println("3. Sonda espacial Cassini-Huygens");
+                System.out.println("4. Telescopio espacial James Webb");
+                System.out.println("5. Sonda espacial Voyager 1"); 
+                System.out.println("6. Rover Curiosity");
+                System.out.println("7. Estación Espacial Internacional");
+                selectNave();
         }
 
-        // Metodo select nave and ShowDataNave fueron separados por partes e ingresados
-        // en el
-        // swicht principal
 
         public static void selectNave() {
-                System.out.println(CYAN + "\n------<NAVES DISPONIBLES>-------" + RESET);
-                for (int i = 0; i < naves.size(); i++) {
-                        System.out.println((i + 1) + ". " + naves.get(i));
-                }
-                System.out.print("Elije una nave para su viaje: ");
+                System.out.print(GREEN + "Elija una nave para su viaje:" + RESET);
                 int option = sc.nextInt();
-        }
-
-        public static void ShowDataNave(int option) {
-
-                if (option >= 1 && option <= naves.size()) {
-                        selectedNave = naves.get(option - 1);
-                        System.out.println(YELLOW + "Has elgido la nave " + selectedNave + RESET);
-                } else {
-                        System.out.println(RED + "Opción no valida" + RESET);
+                
+                if (option < 1 || option > 7) {
+                        System.err.print(RED + "Opción no válida" + RESET);
+                        return;
                 }
-
+                
+                System.out.println(BLUE + "Has elegido la nave número " + option + RESET);
+                System.out.println(YELLOW + "Masa de la nave: " + MasaNave.get(option-1) + " toneladas" + RESET);
+                double combustibleNecesario = calcularCombustible(option, MasaNave);
+                System.out.printf(CYAN + "Combustible necesario: %.2f galones%n" + RESET, combustibleNecesario);
         }
 
         /*
@@ -129,61 +129,49 @@ public class changelle_One {
                 System.out.println("7. Neptuno");
                 System.out.print(GREEN + "Elije un planeta para tu viaje:" + RESET);
                 int option = sc.nextInt();
-
+                ShowNaves();
                 switch (option) {
 
                         case 1:
-                                System.out.println(BLUE + "Has elgido el planeta Mercurio" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Mercurio" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
+                               
                                 break;
                         case 2:
-                                System.out.println(BLUE + "Has elgido el planeta Venus" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Venus" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
+                         
                                 break;
                         case 3:
-                                System.out.println(BLUE + "Has elgido el planeta Marte" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Marte" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
                                 break;
                         case 4:
-                                System.out.println(BLUE + "Has elgido el planeta Jupiter" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Jupiter" + RESET);
 
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
                                 break;
                         case 5:
-                                System.out.println(BLUE + "Has elgido el planeta Saturno" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Saturno" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
                                 break;
                         case 6:
-                                System.out.println(BLUE + "Has elgido el planeta Urano" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Urano" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
                                 break;
                         case 7:
-                                System.out.println(BLUE + "Has elgido el planeta Neptuno" + RESET);
+                                System.out.println(BLUE + "Has elegido el planeta Neptuno" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
-
                                 break;
                         default:
-                                System.err.print(RED + "Opción no valida" + RESET);
+                                System.err.print(RED + "Opción no válida" + RESET);
                                 break;
                 }
         }
@@ -194,8 +182,6 @@ public class changelle_One {
                                 Distance.get(posicion - 1));
         }
 
-        // Metodo para pedir al usuario que ingrese los kilometros
-
         // Metodo para calcular el tiempo de viaje
         public static void TravelTime(int posicion) {
                 double hoursTime = Distance.get(posicion - 1) / travelSpeed;
@@ -204,5 +190,40 @@ public class changelle_One {
                 System.out.printf("El tiempo estimado para llegar es de %.2f dias y %.2f horas%n", days, hours);
 
         }
+
+        public static double calcularCombustible(int planetaElegido, ArrayList<Double> MasaNave) {
+            // Constantes físicas
+            double velocidadEscape = 11.2;  // km/s (velocidad de escape de la Tierra)
+            double velocidadExhausto = 4.5; // km/s (velocidad típica de escape de los gases)
+            
+            // Obtener distancia del planeta seleccionado
+            double distancia = Distance.get(planetaElegido - 1);
+            
+            // Masa de la nave (en toneladas; // Por ejemplo, similar al Curiosity Rover
+            
+            // Cálculo usando la ecuación de Tsiolkovsky
+            // M_combustible = M_nave * (e^(deltaV/V_exhausto) - 1)
+            double deltaV = velocidadEscape * (1 + (distancia / 1e8)); // Ajuste por distancia
+            double masaCombustible = MasaNave.get(planetaElegido - 1) * (Math.exp(deltaV/velocidadExhausto) - 1);
+            
+            // Convertir a galones (densidad aproximada del combustible de cohete)
+            double densidadCombustible = 0.8; // g/cm³
+            double galones = (masaCombustible * 1000000) / (densidadCombustible * 3785.41); // 3785.41 cm³/galón
+            
+            return galones;
+        }
+
+        public static void  calcularOxigeno() {
+
+                
+
+
+
+        }
+                
+
+        
+
+
 
 }
