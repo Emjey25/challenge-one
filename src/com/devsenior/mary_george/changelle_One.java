@@ -27,6 +27,8 @@ public class changelle_One {
                         Arrays.asList("Galileo", "Mariner 9", "New Horizons,", "AresOne"));
         static String selectedNave;
 
+        //Método que imprime los demás métodos
+
         public static void RetoOne() {
 
                 System.out.println(GREEN + """
