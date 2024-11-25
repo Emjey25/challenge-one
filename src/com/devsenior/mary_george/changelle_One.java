@@ -56,7 +56,7 @@ public class changelle_One {
                                         break;
 
                                 case 0:
-                                        System.out.println("Hasta pronto , somos aereolina spaceJmary");
+                                        System.out.println(BLUE + "Hasta pronto , somos aereolina spaceJmary" + RESET);
                                         break;
 
                                 default:
@@ -64,7 +64,7 @@ public class changelle_One {
                         }
 
                 } while (option != 0);
-                System.out.println("Gracias por viajar con nosotros");
+                System.out.println(BLUE + "Gracias por viajar con nosotros" + RESET);
 
         }
 
