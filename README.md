@@ -1,18 +1,73 @@
-## Getting Started
+# 🚀 Space Travel Simulator
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+An interactive Java-based space travel simulator that allows users to plan and execute missions to various planets in our solar system.
 
-## Folder Structure
+## 🌟 Features
 
-The workspace contains two folders by default, where:
+### 🌍 Destination Selection
+- Choose from 7 planets:
+  - Mercury
+  - Venus
+  - Mars
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 🛸 Available Spacecraft
+- Space Shuttle
+- Orion Spacecraft
+- Cassini-Huygens Space Probe
+- James Webb Space Telescope
+- Voyager 1 Space Probe
+- Curiosity Rover
+- International Space Station
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 📊 Resource Management
+The simulator calculates and manages crucial resources:
+- Fuel consumption based on:
+  - Distance to destination
+  - Spacecraft mass
+  - Escape velocity
+- Oxygen requirements considering:
+  - Journey duration
+  - Crew size
+  - Safety margins
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### ⚙️ Technical Features
+- Real-time distance calculations
+- Travel time estimation based on spacecraft velocity (100,000 units)
+- Fuel consumption algorithms
+- Oxygen requirement calculations
+- Color-coded interface for better user experience
 
-## Dependency Management
+### 🎨 User Interface
+- Interactive menu system
+- Color-coded information display:
+  - Success messages in green
+  - Selection information in blue
+  - Warnings in red
+  - Menu titles in cyan
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 🛠️ Technical Stack
+- Language: Java
+- Data Structures: ArrayList
+- User Input: Scanner
+- Display: ANSI Color Codes
+
+## 🚀 How to Run
+1. Ensure you have Java installed on your system
+2. Clone the repository
+3. Navigate to the project directory
+4. Compile and run the main class
+
+## 🔄 Future Enhancements
+- [ ] Random space events during travel
+- [ ] Real-time resource monitoring
+- [ ] Journey progress visualization
+- [ ] Emergency scenarios handling
+- [ ] Multiple crew configurations
+- [ ] Advanced life support systems
+
+## 📝 License
+This project is part of a development challenge and is available for educational purposes.
