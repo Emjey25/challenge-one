@@ -13,8 +13,6 @@ public class changelle_One {
         public static final String YELLOW = "\033[0;33m"; // YELLOW
         public static final String BLUE = "\033[0;34m"; // BLUE
         public static final String CYAN = "\033[0;36m"; // CYAN
-        
-
 
         static double travelSpeed = 100000.0;
         static Scanner sc = new Scanner(System.in);
@@ -72,7 +70,7 @@ public class changelle_One {
                 System.out.println("1. Mostrar planetas");
                 System.out.println("2. Selecciona una nave y planeta como destino");
                 System.out.println("0. salir");
-                System.out.print(YELLOW + "por favor elige una opción:\n" + RESET);
+                System.out.print(YELLOW + "por favor elige una opción: " + RESET);
         }
 
         // Metodo para mostrar los planetas disponibles
@@ -129,63 +127,62 @@ public class changelle_One {
                 System.out.println("5. Saturno");
                 System.out.println("6. Urano");
                 System.out.println("7. Neptuno");
-                System.out.print(GREEN + "Elije un planeta para tu viaje:" + RESET);
+                System.out.print(GREEN + "Elije un planeta para tu viaje: " + RESET);
                 int option = sc.nextInt();
 
                 switch (option) {
 
                         case 1:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Mercurio" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 2:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Venus" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 3:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Marte" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 4:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Jupiter" + RESET);
-
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 5:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Saturno" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 6:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Urano" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         case 7:
+                                ShowDataNave(option);
                                 System.out.println(BLUE + "Has elgido el planeta Neptuno" + RESET);
                                 ShowDatesPlanets(option);
                                 TravelTime(option);
-                                ShowDataNave(option);
 
                                 break;
                         default:
-                                System.err.print(RED + "Opción no valida" + RESET);
+                                System.out.print(RED + "Opción no valida" + RESET);
                                 break;
                 }
         }
