@@ -15,6 +15,7 @@ public class changelle_One {
         public static final String BLUE = "\033[0;34m"; // BLUE
         public static final String CYAN = "\033[0;36m"; // CYAN
 
+
         static double travelSpeed = 100000.0;
         static Scanner sc = new Scanner(System.in);
         static ArrayList<String> planet = new ArrayList<>(
@@ -105,6 +106,10 @@ public class changelle_One {
                 selectNave();
         }
 
+        // Metodo para permitir al usuario elegir una nave
+        // y mostrar su masa
+
+        
 
         public static void selectNave() {
                 System.out.print(GREEN + "Elija una nave para su viaje: " + RESET);
