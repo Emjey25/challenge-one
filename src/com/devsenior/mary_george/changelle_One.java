@@ -307,10 +307,4 @@ public class changelle_One {
                 System.out.printf(CYAN + "Oxigeno necesario: %.2f toneladas%n" + RESET, oxigenoNecesario);
                 // 0.84 es la cantidad de oxigeno que consumen se estima que una persona consume en un día.
         }
-                
-
-        
-
-
-
 }

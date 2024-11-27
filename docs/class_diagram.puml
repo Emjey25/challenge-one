@@ -1,0 +1,54 @@
+@startuml SpaceSimulator
+
+' Estilo del diagrama
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+' Definición de la clase principal
+class changelle_One {
+    ' Constantes
+    + {static} RESET: String
+    + {static} RED: String
+    + {static} GREEN: String
+    + {static} YELLOW: String
+    + {static} BLUE: String
+    + {static} CYAN: String
+
+    ' Atributos
+    - {static} travelSpeed: double
+    - {static} sc: Scanner
+    - {static} planet: ArrayList<String>
+    - {static} Distance: ArrayList<Double>
+    - {static} selectedNave: String
+    - {static} MasaNave: ArrayList<Double>
+    - {static} Naves: ArrayList<String>
+
+    ' Métodos
+    + {static} RetoOne(): void
+    + {static} ShowMenu(): void
+    + {static} ShowPlanets(): void
+    + {static} ShowNaves(): void
+    + {static} selectNave(): void
+    + {static} Selectpasagger(): void
+    + {static} selectPlanet(): void
+    + {static} calcularCombustible(): double
+    + {static} calcularOxigeno(): void
+    + {static} TravelTime(): void
+    + {static} ShowDatesPlanets(): void
+}
+
+' Notas explicativas
+note right of changelle_One
+  Esta clase implementa un simulador
+  de viajes interplanetarios con
+  capacidades de:
+  * Selección de naves
+  * Cálculo de combustible
+  * Gestión de pasajeros
+  * Tiempo de viaje
+end note
+
+@enduml
