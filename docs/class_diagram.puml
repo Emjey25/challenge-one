@@ -34,8 +34,8 @@ class changelle_One {
     + {static} selectNave(): void
     + {static} Selectpasagger(): void
     + {static} selectPlanet(): void
-    + {static} calcularCombustible(): double
-    + {static} calcularOxigeno(): void
+    + {static} calculateFuel(): double
+    + {static} calculateOxygen(): void
     + {static} TravelTime(): void
     + {static} ShowDatesPlanets(): void
 }

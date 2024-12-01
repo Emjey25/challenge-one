@@ -126,7 +126,7 @@ public class changelle_One {
                 System.out.println(BLUE + " Masa de la nave: " + MasaNave.get(option-1) + " toneladas" + RESET);
                 System.out.println(); // Add empty line for spacing
                 Selectpasagger();
-                double combustibleNecesario = calcularCombustible(option, MasaNave);
+                double combustibleNecesario = calculateFuel(option, MasaNave);
                 System.out.println();
                 System.out.printf(BLUE + "Combustible necesario: %.2f galones%n" + RESET, combustibleNecesario);
                 System.out.println(); // Add empty line for spacing
@@ -136,7 +136,7 @@ public class changelle_One {
                 System.out.print(YELLOW + "Ingrese el número de pasajeros a bordo: " + RESET);
                 int pasajeros = sc.nextInt();
                 System.out.println(); // Add empty line for spacing
-                calcularOxigeno(pasajeros);
+                calculateOxygen(pasajeros);
         }
         /*
          * Método para permitir al usuario elegir una planeta destino
@@ -225,13 +225,13 @@ public class changelle_One {
                 System.out.println();
                 
                 // Iniciar simulación de viaje
-                simularViaje(posicion, days, hours);
+                startTravelSimulation(posicion, days, hours);
                 
         }
 
-        private static void simularViaje(int planetaElegido, double dias, double horas) {
-            double distanciaTotal = Distance.get(planetaElegido - 1);
-            double tiempoTotalHoras = (dias * 24) + horas;
+        private static void startTravelSimulation(int selectedPlanet, double days, double hours) {
+            double distanciaTotal = Distance.get(selectedPlanet - 1);
+            double tiempoTotalHoras = (days * 24) + hours;
             
             System.out.println(CYAN + "╔════════════════════════════╗");
             System.out.println("║   INICIANDO SIMULACIÓN    ║");
@@ -254,7 +254,7 @@ public class changelle_One {
                     System.out.printf("Distancia recorrida: %,.0f kilómetros\n", (distanciaTotal * progreso / 100));
                     System.out.printf("Tiempo restante: %.1f horas\n", (tiempoTotalHoras * (100 - progreso) / 100));
                     System.out.println();
-                    generarEventoAleatorio();
+                    generateRandomEvent();
                 }
             }
             
@@ -262,7 +262,7 @@ public class changelle_One {
             System.out.println();
         }
     
-        private static void generarEventoAleatorio() {
+        private static void generateRandomEvent() {
                 
                 ArrayList<String> eventos = new ArrayList<>(List.of(
                     "⚠ ¡Alerta! Lluvia de meteoritos detectada. Activando escudos protectores...",
@@ -280,18 +280,18 @@ public class changelle_One {
 
         //UTILIZE LA ECUACION DE TSIOLKOVSKY porque es unica que me sirve
 
-        public static double calcularCombustible(int planetaElegido, ArrayList<Double> MasaNave) {
+        public static double calculateFuel(int selectedPlanet, ArrayList<Double> spacecraftMass) {
             // Constantes físicas
             double velocidadEscape = 11.2;  // km/s (velocidad de escape de la Tierra)
             double velocidadExhausto = 4.5; // km/s (velocidad típica de escape de los gases)
             
             // Obtener distancia del planeta seleccionado
-            double distancia = Distance.get(planetaElegido - 1);
+            double distancia = Distance.get(selectedPlanet - 1);
         
             // M_combustible = M_nave * (e^(deltaV/V_exhausto) - 1)
             double deltaV = velocidadEscape * (1 + (distancia / 1e8)); // Ajuste por distancia
 
-            double masaCombustible = MasaNave.get(planetaElegido - 1) * (Math.exp(deltaV/velocidadExhausto) - 1);
+            double masaCombustible = MasaNave.get(selectedPlanet - 1) * (Math.exp(deltaV/velocidadExhausto) - 1);
             
             // Convertir a galones (densidad aproximada del combustible de cohete)
             double densidadCombustible = 0.8; // g/cm³
@@ -301,9 +301,9 @@ public class changelle_One {
             return galones;
         }
 
-        public static void  calcularOxigeno(int pasajeros) {
+        public static void calculateOxygen(int passengers) {
 
-                double oxigenoNecesario = 0.84 * pasajeros;
+                double oxigenoNecesario = 0.84 * passengers;
                 System.out.printf(CYAN + "Oxigeno necesario: %.2f toneladas%n" + RESET, oxigenoNecesario);
                 // 0.84 es la cantidad de oxigeno que consumen se estima que una persona consume en un día.
         }
